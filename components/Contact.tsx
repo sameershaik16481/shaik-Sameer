@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin, FiTwitter, FiSend } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin, FiSend } from 'react-icons/fi';
 import { useState } from 'react';
 
 const Contact = () => {
@@ -69,12 +69,6 @@ const Contact = () => {
       name: 'LinkedIn',
       link: 'https://www.linkedin.com/in/sameer-basha-shaik-112965255',
       color: 'hover:text-blue-400',
-    },
-    {
-      icon: <FiTwitter />,
-      name: 'Twitter',
-      link: '#',
-      color: 'hover:text-sky-400',
     },
   ];
 

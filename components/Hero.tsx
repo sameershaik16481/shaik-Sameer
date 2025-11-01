@@ -23,7 +23,7 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
           >
             <p className="text-primary-400 text-lg md:text-xl font-medium mb-4">
-              👋 Hello, I&apos;m
+               Hello, I&apos;m
             </p>
           </motion.div>
 
@@ -46,11 +46,9 @@ const Hero = () => {
           >
             <TypeAnimation
               sequence={[
-                'AI Engineer',
+                'Python Developer',
                 2000,
                 'Full-Stack Developer',
-                2000,
-                'Machine Learning Enthusiast',
                 2000,
                 'Problem Solver',
                 2000,
@@ -68,9 +66,9 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed"
           >
-            Building intelligent systems and innovative solutions that bridge the gap between 
-            cutting-edge AI technology and real-world applications. Passionate about creating 
-            impactful products that make a difference.
+            Passionate Python Developer and Full-Stack Engineer crafting scalable web applications 
+            and innovative solutions. Building robust backend systems with Python and modern 
+            frameworks, creating seamless user experiences with React.
           </motion.p>
 
           {/* CTA Buttons */}

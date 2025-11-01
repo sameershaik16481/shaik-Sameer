@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FiCode, FiBriefcase, FiAward, FiHeart } from 'react-icons/fi';
+import Image from 'next/image';
 
 const About = () => {
   const [ref, inView] = useInView({
@@ -11,10 +12,10 @@ const About = () => {
   });
 
   const stats = [
-    { icon: <FiCode />, label: 'Projects Completed', value: '20+' },
-    { icon: <FiBriefcase />, label: 'Years Experience', value: '2+' },
-    { icon: <FiAward />, label: 'Certifications', value: '10+' },
-    { icon: <FiHeart />, label: 'GitHub Repos', value: '50+' },
+    { icon: <FiCode />, label: 'Projects Completed', value: '10+' },
+    { icon: <FiBriefcase />, label: 'Years Experience', value: '1.5+' },
+    { icon: <FiAward />, label: 'Certifications', value: '4+' },
+    { icon: <FiHeart />, label: 'GitHub Repos', value: '30+' },
   ];
 
   return (
@@ -43,8 +44,22 @@ const About = () => {
           >
             <div className="relative z-10">
               <div className="glass rounded-2xl p-8 neon-border">
-                <div className="aspect-square bg-gradient-to-br from-primary-500 to-purple-600 rounded-xl flex items-center justify-center text-9xl font-bold text-white">
-                  SB
+                <div className="aspect-square bg-gradient-to-br from-primary-500 to-purple-600 rounded-xl overflow-hidden flex items-center justify-center relative">
+                  <Image
+                    src="/profile-pic.jpg"
+                    alt="Shaik Sameer Basha"
+                    fill
+                    className="object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  />
+                  <div className="hidden aspect-square bg-gradient-to-br from-primary-500 to-purple-600 rounded-xl w-full h-full items-center justify-center text-9xl font-bold text-white absolute inset-0">
+                    SSB
+                  </div>
                 </div>
               </div>
             </div>
@@ -63,28 +78,27 @@ const About = () => {
             </h3>
             <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
               <p>
-                I&apos;m a passionate <strong className="text-primary-400">AI Engineer</strong> and{' '}
-                <strong className="text-primary-400">Full-Stack Developer</strong> with a deep love 
-                for creating innovative solutions that leverage the power of artificial intelligence 
-                and modern web technologies.
+                I&apos;m a passionate <strong className="text-primary-400">Python Full-Stack Developer</strong> with expertise in 
+                building scalable web applications and robust backend systems. I specialize in Python 
+                frameworks like Django, Flask, and FastAPI, along with modern frontend technologies.
               </p>
               <p>
-                My journey began with a fascination for how machines can learn and adapt. This curiosity 
-                led me to explore the realms of <strong className="text-primary-400">Machine Learning</strong>, 
-                {' '}<strong className="text-primary-400">Deep Learning</strong>, and{' '}
-                <strong className="text-primary-400">Natural Language Processing</strong>, where I discovered 
-                my passion for building intelligent systems.
+                My journey in technology began with a strong foundation in software development principles. 
+                I excel at developing RESTful APIs, managing databases, and creating responsive user 
+                interfaces. My experience spans across building student portals, inventory management 
+                systems, and business task management applications.
               </p>
               <p>
-                Beyond AI, I thrive on crafting seamless user experiences through full-stack development. 
-                From designing intuitive interfaces to architecting robust backend systems, I enjoy the 
-                entire spectrum of software development. I believe in writing clean, maintainable code 
-                and following best practices to deliver high-quality solutions.
+                I thrive on solving complex problems and delivering efficient, maintainable solutions. 
+                With experience in both frontend and backend development, I bring a holistic approach 
+                to software engineering. I&apos;m proficient in technologies like React, Next.js, Node.js, 
+                MongoDB, PostgreSQL, and have a keen eye for creating intuitive user experiences.
               </p>
               <p>
-                When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to 
-                open-source projects, or sharing knowledge with the developer community. I&apos;m always 
-                excited to tackle challenging problems and learn something new every day.
+                When I&apos;m not coding, you&apos;ll find me exploring new frameworks, contributing to 
+                projects, or continuously learning to stay updated with the latest industry trends. 
+                I&apos;m always excited to tackle challenging problems and contribute to meaningful projects 
+                that make a difference.
               </p>
             </div>
 

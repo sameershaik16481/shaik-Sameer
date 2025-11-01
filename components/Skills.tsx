@@ -3,11 +3,10 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import {
-  SiPython, SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiNodedotjs,
-  SiTensorflow, SiPytorch, SiScikitlearn, SiMongodb, SiPostgresql, SiDocker,
+  SiPython, SiJavascript, SiReact, SiNextdotjs, SiNodedotjs,
+  SiMongodb, SiPostgresql, SiDocker,
   SiGit, SiAmazon, SiGooglecloud, SiFastapi, SiDjango, SiFlask,
-  SiTailwindcss, SiRedux, SiGraphql, SiKubernetes, SiJupyter, SiNumpy,
-  SiPandas, SiOpencv
+  SiTailwindcss, SiHtml5, SiCss3, SiKubernetes
 } from 'react-icons/si';
 
 const Skills = () => {
@@ -18,40 +17,26 @@ const Skills = () => {
 
   const skillCategories = [
     {
-      title: 'AI & Machine Learning',
-      color: 'from-purple-500 to-pink-500',
-      skills: [
-        { name: 'Python', icon: <SiPython />, level: 95 },
-        { name: 'TensorFlow', icon: <SiTensorflow />, level: 90 },
-        { name: 'PyTorch', icon: <SiPytorch />, level: 88 },
-        { name: 'Scikit-learn', icon: <SiScikitlearn />, level: 92 },
-        { name: 'OpenCV', icon: <SiOpencv />, level: 85 },
-        { name: 'NumPy', icon: <SiNumpy />, level: 95 },
-        { name: 'Pandas', icon: <SiPandas />, level: 93 },
-        { name: 'Jupyter', icon: <SiJupyter />, level: 90 },
-      ],
-    },
-    {
       title: 'Frontend Development',
       color: 'from-blue-500 to-cyan-500',
       skills: [
         { name: 'React', icon: <SiReact />, level: 92 },
         { name: 'Next.js', icon: <SiNextdotjs />, level: 90 },
-        { name: 'TypeScript', icon: <SiTypescript />, level: 88 },
         { name: 'JavaScript', icon: <SiJavascript />, level: 93 },
+        { name: 'HTML5', icon: <SiHtml5 />, level: 95 },
+        { name: 'CSS3', icon: <SiCss3 />, level: 94 },
         { name: 'Tailwind CSS', icon: <SiTailwindcss />, level: 95 },
-        { name: 'Redux', icon: <SiRedux />, level: 85 },
       ],
     },
     {
       title: 'Backend Development',
       color: 'from-green-500 to-emerald-500',
       skills: [
+        { name: 'Python', icon: <SiPython />, level: 90 },
         { name: 'Node.js', icon: <SiNodedotjs />, level: 90 },
         { name: 'FastAPI', icon: <SiFastapi />, level: 92 },
         { name: 'Django', icon: <SiDjango />, level: 88 },
         { name: 'Flask', icon: <SiFlask />, level: 87 },
-        { name: 'GraphQL', icon: <SiGraphql />, level: 82 },
       ],
     },
     {
@@ -61,7 +46,6 @@ const Skills = () => {
         { name: 'MongoDB', icon: <SiMongodb />, level: 90 },
         { name: 'PostgreSQL', icon: <SiPostgresql />, level: 88 },
         { name: 'Docker', icon: <SiDocker />, level: 85 },
-        { name: 'Kubernetes', icon: <SiKubernetes />, level: 75 },
         { name: 'Git', icon: <SiGit />, level: 95 },
         { name: 'AWS', icon: <SiAmazon />, level: 80 },
         { name: 'GCP', icon: <SiGooglecloud />, level: 78 },
@@ -151,7 +135,7 @@ const Skills = () => {
             Always learning and exploring new technologies to stay at the forefront of innovation
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            {['Neural Networks', 'Computer Vision', 'NLP', 'REST APIs', 'Microservices', 'CI/CD', 'Agile'].map((tag, index) => (
+            {['REST APIs', 'Microservices', 'CI/CD', 'Responsive Design', 'API Integration', 'Database Design'].map((tag, index) => (
               <motion.span
                 key={tag}
                 initial={{ opacity: 0, scale: 0 }}

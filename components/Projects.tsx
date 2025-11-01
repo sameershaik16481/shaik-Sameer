@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FiGithub, FiExternalLink, FiCode } from 'react-icons/fi';
+import Image from 'next/image';
 
 const Projects = () => {
   const [ref, inView] = useInView({
@@ -17,65 +18,43 @@ const Projects = () => {
       problem: 'Businesses struggle with customer support scalability and 24/7 availability',
       solution: 'Built a custom chatbot using GPT architecture with fine-tuned models for domain-specific queries',
       impact: 'Reduced response time by 85% and handled 10,000+ conversations daily with 92% accuracy',
-      technologies: ['Python', 'TensorFlow', 'FastAPI', 'React', 'MongoDB'],
+      technologies: ['Python', 'FastAPI', 'React', 'MongoDB', 'OpenAI API'],
       github: 'https://github.com/sameershaik16481',
       demo: '#',
       image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800',
     },
     {
-      title: 'Real-Time Object Detection System',
-      description: 'Computer vision application for detecting and tracking objects in live video streams',
-      problem: 'Security systems need real-time threat detection with high accuracy',
-      solution: 'Implemented YOLOv8 model with custom training on specific object classes and optimized for edge devices',
-      impact: 'Achieved 30 FPS processing speed with 95% detection accuracy on edge devices',
-      technologies: ['Python', 'PyTorch', 'OpenCV', 'CUDA', 'Flask'],
+      title: 'EduManage - Student Portal & LMS',
+      description: 'Comprehensive Learning Management System for educational institutions',
+      problem: 'Educational institutions need a unified platform for student management, course content, and progress tracking',
+      solution: 'Developed a full-stack LMS with student portal, course management, assignment submission, and grade tracking features',
+      impact: 'Streamlined student management process, improved engagement by 70%, and reduced administrative workload by 50%',
+      technologies: ['Python', 'Django', 'React', 'PostgreSQL', 'REST API'],
       github: 'https://github.com/sameershaik16481',
       demo: '#',
-      image: 'https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800',
+      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800',
     },
     {
-      title: 'Predictive Analytics Dashboard',
-      description: 'Full-stack web application for data visualization and predictive modeling',
-      problem: 'Companies need actionable insights from complex datasets without technical expertise',
-      solution: 'Created an interactive dashboard with ML models for forecasting and automated reporting',
-      impact: 'Enabled non-technical users to make data-driven decisions, improving forecast accuracy by 40%',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Scikit-learn', 'D3.js'],
+      title: 'InventoryFlow - SMB Inventory System',
+      description: 'Complete inventory management solution for small and medium businesses',
+      problem: 'Small businesses struggle with manual inventory tracking, leading to stockouts and overstocking issues',
+      solution: 'Built an intuitive inventory management system with real-time tracking, automated alerts, and reporting capabilities',
+      impact: 'Reduced inventory errors by 80%, improved stock visibility, and helped businesses save 30% on inventory costs',
+      technologies: ['Python', 'Flask', 'React', 'MongoDB', 'Node.js'],
       github: 'https://github.com/sameershaik16481',
       demo: '#',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800',
     },
     {
-      title: 'E-Commerce Recommendation Engine',
-      description: 'Personalized product recommendation system using collaborative filtering',
-      problem: 'Users face decision fatigue with too many product choices, leading to low conversion rates',
-      solution: 'Built a hybrid recommendation system combining collaborative and content-based filtering',
-      impact: 'Increased user engagement by 65% and boosted sales conversion rate by 28%',
-      technologies: ['Python', 'Django', 'Redis', 'TensorFlow', 'Next.js'],
+      title: 'QuickService - Local Business Task Manager',
+      description: 'Task and project management platform for local service businesses',
+      problem: 'Local businesses need efficient task management, customer tracking, and service scheduling in one place',
+      solution: 'Created a comprehensive task management system with customer profiles, service scheduling, and progress tracking',
+      impact: 'Improved task completion rate by 65%, enhanced customer satisfaction, and reduced administrative overhead by 40%',
+      technologies: ['Python', 'Django', 'Next.js', 'PostgreSQL', 'Tailwind CSS'],
       github: 'https://github.com/sameershaik16481',
       demo: '#',
-      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800',
-    },
-    {
-      title: 'Smart Document Processing System',
-      description: 'Automated document analysis and data extraction using OCR and NLP',
-      problem: 'Manual document processing is time-consuming and error-prone',
-      solution: 'Developed an AI system that extracts, classifies, and structures data from various document types',
-      impact: 'Reduced document processing time from hours to seconds with 98% accuracy',
-      technologies: ['Python', 'Tesseract', 'spaCy', 'FastAPI', 'Docker'],
-      github: 'https://github.com/sameershaik16481',
-      demo: '#',
-      image: 'https://images.unsplash.com/photo-1568667256549-094345857637?w=800',
-    },
-    {
-      title: 'Social Media Analytics Platform',
-      description: 'Real-time sentiment analysis and trend detection for social media content',
-      problem: 'Brands need to monitor public sentiment and respond to trends quickly',
-      solution: 'Created a platform that analyzes millions of posts using NLP to detect sentiment and emerging trends',
-      impact: 'Helped brands respond 5x faster to customer feedback and identify viral trends early',
-      technologies: ['Python', 'React', 'Kafka', 'Elasticsearch', 'BERT'],
-      github: 'https://github.com/sameershaik16481',
-      demo: '#',
-      image: 'https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800',
+      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800',
     },
   ];
 
@@ -110,10 +89,11 @@ const Projects = () => {
             >
               {/* Project Image */}
               <div className="relative h-48 overflow-hidden bg-dark-800">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-transparent opacity-60"></div>
                 <div className="absolute top-4 right-4 flex gap-2">
