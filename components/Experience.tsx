@@ -52,21 +52,21 @@ const Experience = () => {
     },
     {
       icon: <FiAward />,
-      title: 'IOT  Fundamentals: Connecting Things',
-      issuer: 'Cisco',
-      year: '2023',
-    },
-    {
-      icon: <FiAward />,
       title: 'Hackathon Playbook',
       issuer: 'Cisco',
       year: '2022',
     },
     {
       icon: <FiAward />,
-      title: 'IOT  Fundamentals:Big Data & Analytics',
-      issuer: 'Cisco Networking Academy',
-      year: '2023',
+      title: 'Software Developer',
+      issuer: 'Hackerrank',
+      year: '2025',
+    },
+    {
+      icon: <FiAward />,
+      title: 'Python Developer',
+      issuer: 'Hackerrank',
+      year: '2025',
     },
   ];
 
