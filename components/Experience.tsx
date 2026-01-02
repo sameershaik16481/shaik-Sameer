@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { FiBriefcase, FiAward, FiBookOpen } from 'react-icons/fi';
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { FiBriefcase, FiAward, FiBookOpen } from "react-icons/fi";
 
 const Experience = () => {
   const [ref, inView] = useInView({
@@ -12,61 +12,61 @@ const Experience = () => {
 
   const experiences = [
     {
-      type: 'work',
+      type: "work",
       icon: <FiBriefcase />,
-      title: 'Python Full-Stack Developer',
-      company: 'Trangla Innovation Private Limited',
-      location: 'Remote',
-      period: 'June 2024 - Present',
+      title: "Python Full-Stack Developer",
+      company: "Trangla Innovation Private Limited",
+      location: "Remote",
+      period: "June 2024 - Present",
       description: [
-        'Developing scalable web applications using Python (Django, Flask, FastAPI) and modern frontend technologies',
-        'Built RESTful APIs and implemented robust backend systems for student portals and inventory management',
-        'Designed and optimized database schemas for PostgreSQL and MongoDB, ensuring data integrity and performance',
-        'Collaborated with cross-functional teams to deliver high-quality full-stack solutions and maintained code quality',
+        "Developing scalable web applications using Python (Django, Flask, FastAPI) and modern frontend technologies",
+        "Built RESTful APIs and implemented robust backend systems for student portals and inventory management",
+        "Designed and optimized database schemas for PostgreSQL and MongoDB, ensuring data integrity and performance",
+        "Collaborated with cross-functional teams to deliver high-quality full-stack solutions and maintained code quality",
       ],
-      color: 'from-green-500 to-emerald-500',
+      color: "from-green-500 to-emerald-500",
     },
     {
-      type: 'education',
+      type: "education",
       icon: <FiBookOpen />,
-      title: 'Bachelor of Technology',
-      company: 'Electrical and Electronics Engineering',
-      location: 'KHIT, Guntur',
-      period: '2021 - 2024',
+      title: "Bachelor of Technology",
+      company: "Electrical and Electronics Engineering",
+      location: "KHIT, Guntur",
+      period: "2021 - 2024",
       description: [
-        'Acquired strong foundation in engineering principles and problem-solving methodologies',
-        'Developed expertise in full-stack development through self-learning and project implementations',
-        'Built multiple projects including LMS platforms, inventory systems, and task management applications',
-        'Applied programming skills in Python, JavaScript, and modern web frameworks to create practical solutions',
+        "Acquired strong foundation in engineering principles and problem-solving methodologies",
+        "Developed expertise in full-stack development through self-learning and project implementations",
+        "Built multiple projects including LMS platforms, inventory systems, and task management applications",
+        "Applied programming skills in Python, JavaScript, and modern web frameworks to create practical solutions",
       ],
-      color: 'from-purple-500 to-pink-500',
+      color: "from-purple-500 to-pink-500",
     },
   ];
 
   const certifications = [
     {
       icon: <FiAward />,
-      title: 'Cybersecurity Essentials',
-      issuer: 'Cisco',
-      year: '2023',
+      title: "Cybersecurity Essentials",
+      issuer: "Cisco",
+      year: "2023",
     },
     {
       icon: <FiAward />,
-      title: 'Hackathon Playbook',
-      issuer: 'Cisco',
-      year: '2022',
+      title: "Hackathon Playbook",
+      issuer: "Cisco",
+      year: "2022",
     },
     {
       icon: <FiAward />,
-      title: 'Software Developer',
-      issuer: 'Hackerrank',
-      year: '2025',
+      title: "Software Developer",
+      issuer: "Hackerrank",
+      year: "2025",
     },
     {
       icon: <FiAward />,
-      title: 'Python Developer',
-      issuer: 'Hackerrank',
-      year: '2025',
+      title: "Python Developer",
+      issuer: "Hackerrank",
+      year: "2025",
     },
   ];
 
@@ -103,20 +103,28 @@ const Experience = () => {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 className={`relative flex flex-col md:flex-row gap-8 items-center ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
               >
                 {/* Content Card */}
                 <div className="w-full md:w-5/12">
-                  <div className={`glass rounded-2xl p-6 hover:neon-border transition-all duration-300 transform hover:-translate-y-2`}>
+                  <div
+                    className={`glass rounded-2xl p-6 hover:neon-border transition-all duration-300 transform hover:-translate-y-2`}
+                  >
                     {/* Header */}
                     <div className="flex items-start gap-4 mb-4">
-                      <div className={`text-3xl bg-gradient-to-r ${exp.color} p-3 rounded-xl text-white`}>
+                      <div
+                        className={`text-3xl bg-gradient-to-r ${exp.color} p-3 rounded-xl text-white`}
+                      >
                         {exp.icon}
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-xl font-bold text-white mb-1">{exp.title}</h3>
-                        <p className="text-primary-400 font-semibold">{exp.company}</p>
+                        <h3 className="text-xl font-bold text-white mb-1">
+                          {exp.title}
+                        </h3>
+                        <p className="text-primary-400 font-semibold">
+                          {exp.company}
+                        </p>
                         <p className="text-gray-400 text-sm">{exp.location}</p>
                       </div>
                     </div>
@@ -129,7 +137,10 @@ const Experience = () => {
                     {/* Description */}
                     <ul className="space-y-2">
                       {exp.description.map((item, i) => (
-                        <li key={i} className="text-gray-300 text-sm flex items-start gap-2">
+                        <li
+                          key={i}
+                          className="text-gray-300 text-sm flex items-start gap-2"
+                        >
                           <span className="text-primary-400 mt-1">▹</span>
                           <span>{item}</span>
                         </li>
@@ -170,9 +181,13 @@ const Experience = () => {
                 <div className="text-4xl text-primary-400 mb-3 flex justify-center">
                   {cert.icon}
                 </div>
-                <h4 className="text-white font-semibold mb-2 text-sm">{cert.title}</h4>
+                <h4 className="text-white font-semibold mb-2 text-sm">
+                  {cert.title}
+                </h4>
                 <p className="text-gray-400 text-xs mb-1">{cert.issuer}</p>
-                <p className="text-primary-400 text-xs font-medium">{cert.year}</p>
+                <p className="text-primary-400 text-xs font-medium">
+                  {cert.year}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -183,4 +198,3 @@ const Experience = () => {
 };
 
 export default Experience;
-
