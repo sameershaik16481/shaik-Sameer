@@ -1,16 +1,8 @@
 'use client';
-
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { FiGithub, FiExternalLink, FiCode } from 'react-icons/fi';
 import Image from 'next/image';
 
 const Projects = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
   const projects = [
     {
       title: 'AI-Powered Chatbot Platform',
@@ -59,15 +51,10 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-dark-900" ref={ref}>
+    <section id="projects" className="py-20 bg-dark-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Featured <span className="gradient-text">Projects</span>
           </h2>
@@ -75,17 +62,14 @@ const Projects = () => {
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Real-world solutions built with cutting-edge technologies to solve meaningful problems
           </p>
-        </motion.div>
+        </div>
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <motion.div
+            <div
               key={project.title}
-              initial={{ opacity: 0, y: 50 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group glass rounded-2xl overflow-hidden hover:neon-border transition-all duration-300 transform hover:-translate-y-2"
+              className="group glass rounded-2xl overflow-hidden"
             >
               {/* Project Image */}
               <div className="relative h-48 overflow-hidden bg-dark-800">
@@ -153,27 +137,22 @@ const Projects = () => {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* View More */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.8 }}
-          className="text-center mt-12"
-        >
+        <div className="text-center mt-12">
           <a
             href="https://github.com/sameershaik16481"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3 border-2 border-primary-500 text-primary-400 rounded-full font-semibold hover:bg-primary-500 hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+            className="inline-flex items-center gap-2 px-8 py-3 border-2 border-primary-500 text-primary-400 rounded-full font-semibold hover:bg-primary-500 hover:text-white transition-colors"
           >
             <FiCode />
             View More on GitHub
           </a>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

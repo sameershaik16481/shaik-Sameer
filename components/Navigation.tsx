@@ -1,21 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { FiMenu, FiX, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -27,75 +16,54 @@ const Navigation = () => {
   ];
 
   return (
-    <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-dark-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
-      }`}
-    >
+    <nav className="fixed w-full z-50 bg-dark-900/95 backdrop-blur-md shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <motion.a
-            href="#home"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-bold gradient-text"
-          >
+          <a href="#home" className="text-2xl font-bold gradient-text">
             SB.
-          </motion.a>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            {navItems.map((item, index) => (
-              <motion.a
+            {navItems.map((item) => (
+              <a
                 key={item.name}
                 href={item.href}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="text-gray-300 hover:text-primary-400 transition-colors duration-200 font-medium"
+                className="text-gray-300 hover:text-primary-400 transition-colors font-medium"
               >
                 {item.name}
-              </motion.a>
+              </a>
             ))}
           </div>
 
           {/* Social Links */}
           <div className="hidden md:flex items-center space-x-4">
-            <motion.a
+            <a
               href="https://github.com/sameershaik16481"
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.6 }}
               className="text-gray-300 hover:text-primary-400 transition-colors duration-200"
               aria-label="GitHub"
             >
               <FiGithub size={20} />
-            </motion.a>
-            <motion.a
+            </a>
+            <a
               href="https://www.linkedin.com/in/sameer-basha-shaik-112965255"
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.7 }}
               className="text-gray-300 hover:text-primary-400 transition-colors duration-200"
               aria-label="LinkedIn"
             >
               <FiLinkedin size={20} />
-            </motion.a>
-            <motion.a
+            </a>
+            <a
               href="mailto:sameershaik16481@gmail.com"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.8 }}
               className="text-gray-300 hover:text-primary-400 transition-colors duration-200"
               aria-label="Email"
             >
               <FiMail size={20} />
-            </motion.a>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -111,12 +79,7 @@ const Navigation = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-dark-900/95 backdrop-blur-md"
-        >
+        <div className="md:hidden bg-dark-900/95 backdrop-blur-md">
           <div className="px-4 pt-2 pb-4 space-y-2">
             {navItems.map((item) => (
               <a
@@ -156,7 +119,7 @@ const Navigation = () => {
               </a>
             </div>
           </div>
-        </motion.div>
+        </div>
       )}
     </nav>
   );

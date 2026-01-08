@@ -50,9 +50,9 @@ body {
   background: #0284c7;
 }
 
-/* Smooth Scrolling */
+/* Smooth Scrolling disabled for static behavior */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 /* Selection Color */
@@ -83,16 +83,7 @@ html {
               0 0 30px rgba(14, 165, 233, 0.1);
 }
 
-/* Custom Cursor Styles - Only hide on desktop */
-@media (min-width: 768px) and (pointer: fine) {
-  * {
-    cursor: none !important;
-  }
-  
-  a, button, [role="button"] {
-    cursor: none !important;
-  }
-}
+/* Custom Cursor Styles removed to show default cursor */
 
 /* Text Reveal Animation */
 .text-reveal {

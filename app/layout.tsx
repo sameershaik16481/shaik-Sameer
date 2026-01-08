@@ -3,7 +3,6 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import CustomCursor from "@/components/CustomCursor";
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 const poppins = Poppins({ 
@@ -52,8 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} ${poppins.variable} font-sans antialiased bg-dark-950 text-gray-100 cursor-none`}>
-        <CustomCursor />
+      <body className={`${inter.variable} ${poppins.variable} font-sans antialiased bg-dark-950 text-gray-100`}>
         <Navigation />
         <main className="min-h-screen">
           {children}
